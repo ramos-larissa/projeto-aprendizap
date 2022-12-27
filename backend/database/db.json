@@ -1,0 +1,17 @@
+{
+    "lessons": {
+        "a1b56033-396e-41ee-bb50-c9412c124529": {
+            "title": "My first lesson",
+            "gifs": {}
+        },
+        "d08d2b5a-edb3-42c9-bc52-fbad405def06": {
+            "title": "My other lesson",
+            "gifs": {
+                "c87a606d-9248-4e1b-bb44-53617fe8bf6e": {
+                    "url": "http://exampl3.com",
+                    "description": "My new created gif"
+                }
+            }
+        }
+    }
+}
