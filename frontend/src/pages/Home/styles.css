@@ -1,0 +1,9 @@
+.home {
+  text-align: center;
+}
+
+.header {
+  text-align: left;
+  font-size: calc(10px + 2vmin);
+  color: #000000;
+}
