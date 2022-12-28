@@ -1,8 +1,6 @@
-import React from "react";
-import Home from './pages/Home';
+import React from 'react';
+import Routes from './config/routes';
 
-function App() {
-  return <Home />;
-}
+const App = () => <Routes/>;
 
 export default App;

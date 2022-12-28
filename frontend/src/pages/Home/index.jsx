@@ -4,15 +4,24 @@ import Lesson from "../../components/Lesson";
 
 import "./styles.scss";
 
-const Home = () => {
+export default function Home() {
   return (
     <div style={{ padding: 16 }}>
-      <Item elevation={0}>
-        <div className="header">Aulas em Gif AprendiZAP</div>
-      </Item>
-      <Lesson />
+      <p> home </p>
     </div>
   );
-};
+}
 
-export default Home;
+
+// const Home = () => {
+//   return (
+//     <div style={{ padding: 16 }}>
+//       <Item elevation={0}>
+//         <div className="header">Aulas em Gif AprendiZAP</div>
+//       </Item>
+//       <Lesson />
+//     </div>
+//   );
+// };
+
+// export default Home;
