@@ -1,17 +1,22 @@
 import React from "react";
 import Item from "../../components/Item";
 import Lesson from "../../components/Lesson";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 import "./styles.scss";
 
 export default function Home() {
   return (
-    <div style={{ padding: 16 }}>
-      <p> home </p>
-    </div>
+    <>
+      <Header />
+      <div style={{ padding: 16 }}>
+        <p> home </p>
+      </div>
+      <Footer />
+    </>
   );
 }
-
 
 // const Home = () => {
 //   return (

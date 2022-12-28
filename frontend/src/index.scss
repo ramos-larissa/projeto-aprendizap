@@ -1,16 +1,27 @@
-$main-background-color: #f6f6fe;
-$main-font-family: 'Roboto', sans-serif;
 
+// Variables
+:root{
+  --primary-color: #7159c1;
+  --secondary-color: #e31586;
+  --main-background-color: #f6f6fe;
+  --main-font-family: 'Roboto', sans-serif;
+}
 
 body {
-  background-color: $main-background-color;
+  background-color: var(--main-background-color);
   margin: 0;
-  font-family: $main-font-family;
+  font-family: var(--main-font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+a{
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
