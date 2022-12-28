@@ -1,8 +1,11 @@
+$main-background-color: #f6f6fe;
+$main-font-family: 'Roboto', sans-serif;
+
+
 body {
+  background-color: $main-background-color;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: $main-font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

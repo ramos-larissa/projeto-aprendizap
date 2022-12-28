@@ -2,7 +2,7 @@ import React from "react";
 import Item from "../../components/Item";
 import Lesson from "../../components/Lesson";
 
-import "./styles.css";
+import "./styles.scss";
 
 const Home = () => {
   return (
