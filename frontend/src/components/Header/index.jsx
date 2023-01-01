@@ -10,12 +10,14 @@ export default function Header() {
   return (
     <>
       <div className="container-header">
-        <Link to={"/"}><img src={Logo} alt="Logo" /></Link>
+        <Link to={"/"}>
+          <img src={Logo} alt="Logo" />
+        </Link>
         <div className="content-profile">
-            <Link to={"/"}>
-                <img src={photo} alt="picture profile" />
-                <span>Aurora Aksnes</span>
-            </Link>
+          <Link to={"/"}>
+            <img src={photo} alt="picture profile" />
+            <span>Aurora Aksnes</span>
+          </Link>
         </div>
       </div>
     </>
