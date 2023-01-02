@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Service from "../../services/Service";
+
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import CreateClass from "../../components/CreateClass";
@@ -7,16 +9,35 @@ import CardClass from "../../components/CardClass";
 import "./styles.scss";
 
 export default function Home() {
+  const [body, setBody] = useState(0);
+  useEffect(() => {
+    Service.getFront()
+      .then((response) => {
+        const { data } = response;
+        setBody(data);
+        return body;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, ['']);
+
+
   return (
-    <>
+    <div className="container-home">
       <Header />
       <div>
         <CreateClass />
       </div>
       <div>
-        <CardClass />
+        {Object.keys(body).map((item, value) => {
+          console.log(item, "item !!!!!!!!!!", value, "value !!!!!!!!", body[item],);        
+          return  <CardClass data={body[item]} index={value}/>;
+        })} 
+        
+       
       </div>
       <Footer />
-    </>
+    </div>
   );
 }

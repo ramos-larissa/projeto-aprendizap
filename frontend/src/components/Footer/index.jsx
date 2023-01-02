@@ -6,8 +6,10 @@ import "./styles.scss";
 export default function Footer() {
   return (
     <>
-      <div class="container-footer">
-        <p>@ramos-larissa</p>
+      <div  className="container-footer">
+        <div className="content-footer">
+          <p>@ramos-larissa</p>
+        </div>
       </div>
     </>
   );
