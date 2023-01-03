@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import CardGif from "../CardGif";
-import AddGif from "../AddGif";
-import Service from "../../services/Service";
+import React, { useEffect, useState } from 'react';
+import CardGif from '../CardGif';
+import AddGif from '../AddGif';
+import Service from '../../services/Service';
 
-import Accordion from "@mui/material/Accordion";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import DeleteIcon from "@mui/icons-material/Delete";
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import DeleteIcon from '@mui/icons-material/Delete';
 
-import "./styles.scss";
-import { Button } from "@mui/material";
+import './styles.scss';
+import { Button } from '@mui/material';
 
 export default function CardClass({ data }, index) {
   const [expanded, setExpanded] = useState(false);
@@ -28,7 +28,7 @@ export default function CardClass({ data }, index) {
         window.location.reload();
       })
       .catch((error) => {
-        console.log(error);
+        window.alert(`${error} Erro ao deletar aula`);
       });
   };
 
@@ -39,7 +39,7 @@ export default function CardClass({ data }, index) {
   return (
     <div className="container-card-class">
       <Accordion
-        sx={{ width: "70%" }}
+        sx={{ width: '70%' }}
         expanded={expanded === `panel${index}`}
         onChange={handleChange(`panel${index}`)}
       >
@@ -48,13 +48,26 @@ export default function CardClass({ data }, index) {
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
-          <Typography sx={{mr:"8px"}} variant="h5">{data.title}</Typography>
-          <Typography sx={{p:"8px", backgroundColor: "#ee73b6", borderRadius:15, fontSize:12, color: "white", textAlign:"center"}}>{data.subject}</Typography>
+          <Typography sx={{ mr: '8px' }} variant="h5">
+            {data.title}
+          </Typography>
+          <Typography
+            sx={{
+              p: '8px',
+              backgroundColor: '#ee73b6',
+              borderRadius: 15,
+              fontSize: 12,
+              color: 'white',
+              textAlign: 'center',
+            }}
+          >
+            {data.subject}
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <AddGif data={data} />
           <Button
-            size={"small"}
+            size={'small'}
             variant="outlined"
             color="error"
             startIcon={<DeleteIcon />}
@@ -63,9 +76,17 @@ export default function CardClass({ data }, index) {
           >
             Excluir
           </Button>
-          {Object.keys(data.gif).map((item, value) => {
-            return <CardGif data={data.gif[item]} index={value} idLesson={data.id} />;
-          })}
+          <div className="content-card-class">
+            {Object.keys(data.gif).map((item, value) => {
+              return (
+                <CardGif
+                  data={data.gif[item]}
+                  index={value}
+                  idLesson={data.id}
+                />
+              );
+            })}
+          </div>
         </AccordionDetails>
       </Accordion>
     </div>

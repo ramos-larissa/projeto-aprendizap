@@ -41,7 +41,7 @@ export default function AddGif({ data }) {
         window.location.reload(false);
       })
       .catch((error) => {
-        console.log(error);
+        window.alert(`${error} Erro ao adicionar gif`);
       });
   };
 
