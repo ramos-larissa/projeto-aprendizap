@@ -1,30 +1,30 @@
-import * as React from "react";
-import Service from "../../services/Service";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import AddIcon from "@mui/icons-material/Add";
-import TextField from "@mui/material/TextField";
+import * as React from 'react';
+import Service from '../../services/Service';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import AddIcon from '@mui/icons-material/Add';
+import TextField from '@mui/material/TextField';
 
-import "./styles.scss";
+import './styles.scss';
 
 const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
   boxShadow: 24,
   p: 4,
 };
 
 export default function AddGif({ data }) {
   const [open, setOpen] = React.useState(false);
-  const [url, setUrl] = React.useState("");
-  const [description, setDescription] = React.useState("");
+  const [url, setUrl] = React.useState('');
+  const [description, setDescription] = React.useState('');
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -49,7 +49,7 @@ export default function AddGif({ data }) {
     <div>
       <Button
         onClick={handleOpen}
-        size={"small"}
+        size={'small'}
         variant="outlined"
         startIcon={<AddIcon />}
         color="success"
@@ -86,7 +86,7 @@ export default function AddGif({ data }) {
           />
           <Button
             onClick={addGif}
-            size={"small"}
+            size={'small'}
             variant="outlined"
             startIcon={<AddIcon />}
             color="success"

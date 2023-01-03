@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import Service from "../../services/Service";
+import React, { useEffect, useState } from 'react';
+import Service from '../../services/Service';
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import CreateClass from "../../components/CreateClass";
-import CardClass from "../../components/CardClass";
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import CreateClass from '../../components/CreateClass';
+import CardClass from '../../components/CardClass';
 
-import "./styles.scss";
+import './styles.scss';
 
 export default function Home() {
   const [body, setBody] = useState(0);
@@ -20,7 +20,7 @@ export default function Home() {
       .catch((error) => {
         console.log(error);
       });
-  }, [""]);
+  }, ['']);
 
   return (
     <div className="container-home">
