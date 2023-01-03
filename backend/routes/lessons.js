@@ -102,12 +102,12 @@ router.post("/:id/gif", async (req, res) => {
   }
 });
 /* PUT Gif. */
-router.put("/:id/gif/:id", async (req, res) => {
+router.put("/:id/gif/:idGif", async (req, res) => {
   // Get data from the DB
   try {
     // Get data from the DB
     const data = await db.getData(
-      `/lessons/${req.params.id}/gif/${req.params.id}`
+      `/lessons/${req.params.id}/gif/${req.params.idGif}`
     );
     const updateGif = {
       url: req.body.url,
@@ -125,9 +125,9 @@ router.put("/:id/gif/:id", async (req, res) => {
 });
 
 /* DELETE lesson. */
-router.delete("/:id/gif/:id", async (req, res) => {
+router.delete("/:id/gif/:idGif", async (req, res) => {
   try {
-    await db.delete(`/lessons/${req.params.id}/gif/${req.params.id}`);
+    await db.delete(`/lessons/${req.params.id}/gif/${req.params.idGif}`);
     await db.save();
     await db.reload();
     res.json(db);

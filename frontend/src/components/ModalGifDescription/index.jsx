@@ -11,7 +11,6 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -38,8 +37,8 @@ export default function ModalGifDescription({ data }) {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Descrição
           </Typography>
-          <img src={data.url} alt="gif" width="auto" height="250" />
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <img src={data.url} alt="gif" width="auto" height="auto" />
+          <Typography id="modal-modal-description" sx={{ mt: 2, maxWidth: 300 }}>
           {data.description}
           </Typography>
         </Box>
