@@ -11,7 +11,7 @@ import "./styles.scss";
 export default function Home() {
   const [body, setBody] = useState(0);
   useEffect(() => {
-    Service.getFront()
+    Service.getList()
       .then((response) => {
         const { data } = response;
         setBody(data);

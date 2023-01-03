@@ -11,8 +11,7 @@ import Typography from "@mui/material/Typography";
 
 import "./styles.scss";
 
-export default function CardGif({ data }) {
-  
+export default function CardGif({ data, idLesson }) {  
   return (
     <>
       <Card sx={{ width: 250 }}>
@@ -36,7 +35,7 @@ export default function CardGif({ data }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <ModalGifDescription data={data}/>
+          <ModalGifDescription data={data} idLesson={idLesson}/>
         </CardActions>
       </Card>
       

@@ -1,7 +1,7 @@
 import api from "./api";
 
 export default class Service{
-    static getFront() {
+    static getList() {
         return api.get();
     }
     static create(body) {
@@ -9,6 +9,9 @@ export default class Service{
     }
     static addGif(id, body) {
         return api.post( `/${id}/gif`, body);
+    }
+    static deleteGif(id, idGif) {
+        return api.delete( `/${id}/gif/${idGif}`);
     }
     static update(id, body) {
         return api.put( `/${id}`, body);

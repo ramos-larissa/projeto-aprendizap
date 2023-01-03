@@ -64,7 +64,7 @@ export default function CardClass({ data }, index) {
             Excluir
           </Button>
           {Object.keys(data.gif).map((item, value) => {
-            return <CardGif data={data.gif[item]} index={value} />;
+            return <CardGif data={data.gif[item]} index={value} idLesson={data.id} />;
           })}
         </AccordionDetails>
       </Accordion>

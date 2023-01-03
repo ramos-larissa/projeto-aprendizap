@@ -1,4 +1,5 @@
 import * as React from "react";
+import Service from "../../services/Service";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -17,10 +18,27 @@ const style = {
   p: 4,
 };
 
-export default function ModalGifDescription({ data }) {
+export default function ModalGifDescription({ data, idLesson }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const id = idLesson;
+  const idGif = data.id;
+
+  const handleClick = () => {
+    Service.deleteGif(id, idGif)
+      .then((response) => {
+        handleClose();
+        return response;
+      })
+      .then(() => {
+        window.location.reload(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div>
@@ -38,9 +56,20 @@ export default function ModalGifDescription({ data }) {
             Descrição
           </Typography>
           <img src={data.url} alt="gif" width="auto" height="auto" />
-          <Typography id="modal-modal-description" sx={{ mt: 2, maxWidth: 300 }}>
-          {data.description}
+          <Typography
+            id="modal-modal-description"
+            sx={{ mt: 2, maxWidth: 300 }}
+          >
+            {data.description}
           </Typography>
+          <Button
+            sx={{ mt: 5 }}
+            size="small"
+            color="error"
+            onClick={handleClick}
+          >
+            APAGAR
+          </Button>
         </Box>
       </Modal>
     </div>
