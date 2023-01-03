@@ -1,32 +1,39 @@
-import React from "react";
-import Item from "../../components/Item";
-import Lesson from "../../components/Lesson";
+import React, { useEffect, useState } from "react";
+import Service from "../../services/Service";
+
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import CreateClass from "../../components/CreateClass";
+import CardClass from "../../components/CardClass";
 
 import "./styles.scss";
 
 export default function Home() {
+  const [body, setBody] = useState(0);
+  useEffect(() => {
+    Service.getList()
+      .then((response) => {
+        const { data } = response;
+        setBody(data);
+        return body;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [""]);
+
   return (
-    <>
+    <div className="container-home">
       <Header />
-      <div style={{ padding: 16 }}>
-        <p> home </p>
+      <div>
+        <CreateClass />
+      </div>
+      <div>
+        {Object.keys(body).map((item, value) => {
+          return <CardClass data={body[item]} index={value} />;
+        })}
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
-
-// const Home = () => {
-//   return (
-//     <div style={{ padding: 16 }}>
-//       <Item elevation={0}>
-//         <div className="header">Aulas em Gif AprendiZAP</div>
-//       </Item>
-//       <Lesson />
-//     </div>
-//   );
-// };
-
-// export default Home;
