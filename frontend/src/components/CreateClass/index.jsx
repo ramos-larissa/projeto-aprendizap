@@ -50,7 +50,7 @@ export default function CreateClass() {
             variant="body2"
             sx={{ fontSize: 18, textAlign: "center" }}
           >
-            well meaning and kindly words of encouragement will go a long way to
+            Escolha a melhor categoria/materia para sua classe e crie uma nova aula para seus alunos.
           </Typography>
 
           <div className="form-control-subject">

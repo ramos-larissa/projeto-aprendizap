@@ -12,8 +12,7 @@ import Typography from "@mui/material/Typography";
 import "./styles.scss";
 
 export default function CardGif({ data }) {
-  console.log(data, "data card gif");
-
+  
   return (
     <>
       <Card sx={{ width: 250 }}>

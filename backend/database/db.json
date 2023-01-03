@@ -4,7 +4,13 @@
             "id": "b4103949-6169-4b4f-b863-bc6d62b55b57",
             "title": "Poligonos",
             "subject": "Matemática",
-            "gif": {},
+            "gif": {
+                "fcefe320-2ceb-42dd-92bb-2abca0a5823f": {
+                    "id": "fcefe320-2ceb-42dd-92bb-2abca0a5823f",
+                    "url": "https://media.tenor.com/boXfTGVS8fUAAAAM/maths.gif",
+                    "description": "Math math 1+2"
+                }
+            },
             "Date": "2023-01-03T00:57:56.465Z"
         },
         "b6468786-8629-4cd0-b8b7-fc28ab8e1ec0": {

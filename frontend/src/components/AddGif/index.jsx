@@ -29,9 +29,7 @@ export default function AddGif({ data }) {
   const handleClose = () => setOpen(false);
 
   const id = data.id;
-  const body = { url, description };
-  console.log(body);
-  console.log(url, description);
+  const body = { url: url, description: description };
 
   const addGif = () => {
     Service.addGif(id, body)
