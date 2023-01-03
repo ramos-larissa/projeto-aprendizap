@@ -23,11 +23,11 @@ router.post("/create", async (req, res) => {
   const newLesson = {
     id: uuidv4(),
     title: req.body.title,
-    tag: req.body.tags,
+    subject: req.body.subject,
     gif: {},
     Date: new Date(),
-  };                 
-  
+  };
+
   await db.push(`/lessons/${newLesson.id}`, newLesson, false);
   await db.save();
   await db.reload();
@@ -39,11 +39,10 @@ router.post("/create", async (req, res) => {
 router.post("/:id/gif", async (req, res) => {
   // Get data from the DB
   const data = await db.getData(`/lessons/${req.params.id}`);
-  console.log(data, "!!!!!!!");
   const createGif = {
-      id: uuidv4(),
-      url: req.body.url,
-      description: req.body.description,
+    id: uuidv4(),
+    url: req.body.url,
+    description: req.body.description,
   };
 
   await db.push(`/lessons/${data.id}/gif/${createGif.id}`, createGif, false);
@@ -52,7 +51,6 @@ router.post("/:id/gif", async (req, res) => {
 
   console.log(db, "!!!!!!!");
   res.json(db);
-
 });
 
 /* PUT lesson. */
@@ -62,7 +60,7 @@ router.put("/:id", async (req, res) => {
   const updatedLesson = {
     id: data.id,
     title: req.body.title,
-    tag: req.body.tags,
+    subject: req.body.subject,
     gif: {},
     Date: new Date(),
   };
@@ -80,7 +78,6 @@ router.delete("/:id", async (req, res) => {
   await db.delete(`/lessons/${req.params.id}`);
   await db.save();
   await db.reload();
-
   res.json(db);
 });
 

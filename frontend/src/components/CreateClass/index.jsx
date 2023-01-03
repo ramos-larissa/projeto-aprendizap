@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import Service from "../../services/Service";
 import ModalCreateClass from "../ModalCreateClass";
 import { Link } from "react-router-dom";
 
 import Card from "@mui/material/Card";
+import Button from "@mui/material/Button";
 import CardContent from "@mui/material/CardContent";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
@@ -10,12 +12,25 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 
 import "./styles.scss";
 
 export default function CreateClass() {
   const [value, setValue] = useState("Outros");
+  const [classTitle, setClassTitle] = useState("");
+
+  const body = { title: classTitle, subject: value };
+
+  const handleSubmit = () => {
+    Service.create(body)
+    .then((response) => {
+      window.location.reload(false);
+      return response;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  };
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -84,6 +99,11 @@ export default function CreateClass() {
                   label="Inglês"
                 />
                 <FormControlLabel
+                  value="História"
+                  control={<Radio />}
+                  label="História"
+                />
+                <FormControlLabel
                   value="Outros"
                   control={<Radio />}
                   label="Outros"
@@ -99,8 +119,11 @@ export default function CreateClass() {
               variant="outlined"
               size="small"
               sx={{ m: 2 }}
+              onChange={(e) => setClassTitle(e.target.value)}
             />
-            <ModalCreateClass />
+            <Button size={"large"} variant="outlined" sx={{ m: 2 }} onClick={handleSubmit}>
+              Adicionar
+            </Button>
           </div>
         </CardContent>
       </Card>

@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ModalGifDescription from "../ModalGifDescription";
-
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -12,34 +11,36 @@ import Typography from "@mui/material/Typography";
 
 import "./styles.scss";
 
-export default function CardGif() {
+export default function CardGif({ data }) {
+  console.log(data, "data card gif");
+
   return (
     <>
       <Card sx={{ width: 250 }}>
         <CardMedia
           component="img"
-          alt="green iguana"
+          alt="gif"
           width="150"
           height="auto"
-          image="https://media4.giphy.com/media/Y0zXpgW4TQmPd6lHIR/giphy.gif"
+          image={data.url}
         />
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
             Descrição
           </Typography>
-          <Typography variant="body2" color="text.secondary" className="card-gif-description">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            className="card-gif-description"
+          >
+            {data.description}
           </Typography>
         </CardContent>
         <CardActions>
-          <ModalGifDescription/>
+          <ModalGifDescription data={data}/>
         </CardActions>
       </Card>
+      
     </>
   );
 }

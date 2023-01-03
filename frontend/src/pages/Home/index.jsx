@@ -20,8 +20,7 @@ export default function Home() {
       .catch((error) => {
         console.log(error);
       });
-  }, ['']);
-
+  }, [""]);
 
   return (
     <div className="container-home">
@@ -31,11 +30,8 @@ export default function Home() {
       </div>
       <div>
         {Object.keys(body).map((item, value) => {
-          console.log(item, "item !!!!!!!!!!", value, "value !!!!!!!!", body[item],);        
-          return  <CardClass data={body[item]} index={value}/>;
-        })} 
-        
-       
+          return <CardClass data={body[item]} index={value} />;
+        })}
       </div>
       <Footer />
     </div>

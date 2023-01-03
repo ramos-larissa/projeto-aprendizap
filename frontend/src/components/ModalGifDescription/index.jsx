@@ -18,7 +18,7 @@ const style = {
   p: 4,
 };
 
-export default function ModalGifDescription() {
+export default function ModalGifDescription({ data }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -38,8 +38,9 @@ export default function ModalGifDescription() {
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Descrição
           </Typography>
+          <img src={data.url} alt="gif" width="auto" height="250" />
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          {data.description}
           </Typography>
         </Box>
       </Modal>
