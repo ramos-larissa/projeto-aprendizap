@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import ModalGifDescription from "../ModalGifDescription";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import ModalGifDescription from '../ModalGifDescription';
 
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
-import "./styles.scss";
+import './styles.scss';
 
-export default function CardGif({ data, idLesson }) {  
+export default function CardGif({ data, idLesson }) {
   return (
     <>
       <Card sx={{ width: 250 }}>
@@ -35,10 +35,9 @@ export default function CardGif({ data, idLesson }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <ModalGifDescription data={data} idLesson={idLesson}/>
+          <ModalGifDescription data={data} idLesson={idLesson} />
         </CardActions>
       </Card>
-      
     </>
   );
 }
