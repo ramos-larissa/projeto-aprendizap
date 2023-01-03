@@ -28,7 +28,7 @@ export default function CardClass({ data }, index) {
         window.location.reload();
       })
       .catch((error) => {
-        console.log(error);
+        window.alert(`${error} Erro ao deletar aula`);
       });
   };
 

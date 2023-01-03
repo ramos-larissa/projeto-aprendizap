@@ -28,7 +28,7 @@ export default function CreateClass() {
         return response;
       })
       .catch((error) => {
-        console.log(error);
+        window.alert(`${error} Erro ao criar aula`);
       });
   };
 

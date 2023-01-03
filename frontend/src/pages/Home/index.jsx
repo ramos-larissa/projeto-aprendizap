@@ -18,7 +18,7 @@ export default function Home() {
         return body;
       })
       .catch((error) => {
-        console.log(error);
+        window.alert(`${error} Erro ao carregar aulas`);
       });
   }, ['']);
 

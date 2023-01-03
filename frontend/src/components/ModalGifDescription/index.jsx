@@ -36,7 +36,7 @@ export default function ModalGifDescription({ data, idLesson }) {
         window.location.reload(false);
       })
       .catch((error) => {
-        console.log(error);
+        window.alert(`${error} Erro ao deletar gif`);
       });
   };
 

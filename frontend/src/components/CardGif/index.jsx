@@ -14,7 +14,7 @@ import './styles.scss';
 export default function CardGif({ data, idLesson }) {
   return (
     <>
-      <Card sx={{ width: 250, height: 400, m: 3, backgroundColor: "#f3eff5" }}>
+      <Card sx={{ width: 250, height: 400, m: 3, backgroundColor: "#f7f7f7" }}>
         <CardMedia
           component="img"
           alt="gif"
